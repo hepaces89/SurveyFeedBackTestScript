@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManagerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.042 sec <<< FAILURE!
-testFillInEntryId(org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManagerTest)  Time elapsed: 0.011 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.188 sec <<< FAILURE!
+testFillInEntryId(org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManagerTest)  Time elapsed: 0.159 sec  <<< ERROR!
 java.lang.NullPointerException
-	at org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManager.fillInEntryId(KrogerFeedbackManager.java:73)
+	at org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManager.fillInEntryId(KrogerFeedbackManager.java:78)
 	at org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManagerTest.testFillInEntryId(KrogerFeedbackManagerTest.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

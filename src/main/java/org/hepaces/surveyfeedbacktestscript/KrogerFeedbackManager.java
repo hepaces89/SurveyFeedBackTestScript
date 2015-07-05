@@ -12,6 +12,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -30,12 +32,15 @@ public class KrogerFeedbackManager {
     
     public static String entryIdPrefix = "CN";
     
+    public static Logger logger = LoggerFactory.getLogger(KrogerFeedbackManager.class);
+    
     /**
      * Fills in the date and time fields
      * @param date
      * @param browser 
      */
     public static void fillInDateAndTime(DateTime date, WebDriver browser){
+        logger.debug("Attempting to fill in the date and time inputs @:" + browser.getCurrentUrl());
         try{
             //Date Inputs
             WebElement monthInput = browser.findElement(By.id(inputMonthId));
