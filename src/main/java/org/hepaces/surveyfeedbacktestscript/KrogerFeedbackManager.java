@@ -30,6 +30,11 @@ public class KrogerFeedbackManager {
     
     public static String entryIdPrefix = "CN";
     
+    /**
+     * Fills in the date and time fields
+     * @param date
+     * @param browser 
+     */
     public static void fillInDateAndTime(DateTime date, WebDriver browser){
         try{
             //Date Inputs
@@ -57,6 +62,12 @@ public class KrogerFeedbackManager {
         }
     }
     
+    /**
+     * Fills in the EntryId field
+     * @param entryId
+     * @param browser
+     * @return 
+     */
     public static String[] fillInEntryId(String entryId, WebDriver browser){
         String[] entryIdComponents = entryId.split("[\\-]");
         WebElement entryIdComponentInput = browser.findElement(By.id(entryIdPrefix+1));
@@ -68,6 +79,11 @@ public class KrogerFeedbackManager {
         return entryIdComponents;
     }
     
+    /**
+     * Centralized handling for numeric dropdowns (select elements)
+     * @param numberDownArrowPresses
+     * @param input 
+     */
     private static void numericDropDownHandler(int numberDownArrowPresses, WebElement input){
         input.click();
         for (int i = 1; i <= numberDownArrowPresses; i++) {
