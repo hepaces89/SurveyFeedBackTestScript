@@ -12,7 +12,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.Mockito;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 /**
  *
@@ -47,7 +49,9 @@ public class KrogerFeedbackManagerTest {
     public void testFillInEntryId() {
         System.out.println("fillInEntryId");
         String entryId = "014-695-15-858-88-28";
-        WebDriver browser = null;
+        WebDriver browser = Mockito.mock(WebDriver.class);
+        WebElement targetElement = Mockito.mock(WebElement.class);
+        Mockito.when(browser.findElement(Mockito.any(org.openqa.selenium.By.class))).thenReturn(targetElement);
         String[] expResult = {"014", "695", "15", "858", "88", "28"};
         String[] result = KrogerFeedbackManager.fillInEntryId(entryId, browser);
         assertArrayEquals(expResult, result);
