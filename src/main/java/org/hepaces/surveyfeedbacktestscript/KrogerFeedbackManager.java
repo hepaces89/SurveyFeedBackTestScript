@@ -5,6 +5,7 @@
  */
 package org.hepaces.surveyfeedbacktestscript;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeFieldType;
 import org.openqa.selenium.By;
@@ -84,6 +85,21 @@ public class KrogerFeedbackManager {
         return entryIdComponents;
     }
     
+    public static void clickSubmit(WebDriver browser){
+        WebElement submitButton = browser.findElement(By.id("NextButton"));
+        submitButton.click();
+    }
+    
+    public static String getErrorMessage(WebDriver browser){
+        String errorMessage = null;
+        WebElement error = browser.findElement(By.cssSelector(".Error"));
+        
+        if(error.isDisplayed() && !StringUtils.isEmpty(error.getText())){
+            errorMessage = error.getText();
+        }
+        return errorMessage;
+    }
+    
     /**
      * Centralized handling for numeric dropdowns (select elements)
      * @param numberDownArrowPresses
@@ -101,11 +117,16 @@ public class KrogerFeedbackManager {
         //test inputs
         DateTime date = new DateTime();
         WebDriver browser = new FirefoxDriver();
-        String entryId = "014-695-15-858-88-28";
+        String entryId = "014-695-15-858-88-0a";
         browser.get("https://www.krogerfeedback.com/");
         
         fillInDateAndTime(date, browser);
         fillInEntryId(entryId, browser);
+        
+        clickSubmit(browser);
+        
+        System.out.println(getErrorMessage(browser));
+        
         browser.close();
         browser.quit();
     }
