@@ -85,6 +85,10 @@ public class KrogerFeedbackManager {
         return entryIdComponents;
     }
     
+    /**
+     * Clicks the submit button
+     * @param browser 
+     */
     public static void clickSubmit(WebDriver browser){
         WebElement submitButton = browser.findElement(By.id("NextButton"));
         submitButton.click();
