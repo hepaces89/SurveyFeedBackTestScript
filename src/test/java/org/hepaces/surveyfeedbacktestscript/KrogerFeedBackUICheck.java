@@ -47,12 +47,9 @@ public class KrogerFeedBackUICheck {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-    
+    /**
+     * Simple test for error message
+     */
     @Test
     public void testErrorMessage(){
         DateTime date = new DateTime();
