@@ -7,15 +7,14 @@ package org.hepaces.surveyfeedbacktestscript;
 
 import junit.framework.Assert;
 import org.apache.commons.codec.binary.StringUtils;
-import org.hepaces.surveyfeedbacktestscript.KrogerFeedbackManager;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
